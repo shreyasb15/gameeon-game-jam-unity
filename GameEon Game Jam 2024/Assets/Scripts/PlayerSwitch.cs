@@ -27,21 +27,25 @@ public class PlayerSwitch : MonoBehaviour
     {
         if(player1Active)
         {
-            player1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            // player1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            player1.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             player1Controller.enabled = false;
 
-            player2.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            // player2.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            player2.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             player2Controller.enabled = true;
 
             player1Active = false;
         }
         else
         {
-            player2.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-            player1Controller.enabled = true;
-
-            player1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            // player2.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            player2.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             player2Controller.enabled = false;
+
+            // player1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            player1.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            player1Controller.enabled = true;
 
             player1Active = true;
         }
