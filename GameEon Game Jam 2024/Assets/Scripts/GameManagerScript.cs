@@ -20,7 +20,7 @@ public class GameManagerScript : MonoBehaviour
     void Update()
     {
         // PlayerSwitch = GetComponent<PlayerSwitch>().CompareTag("ActivePlayer");
-        activePlayer = GetComponent<PlayerSwitch>().gameObject.active;
+        // activePlayer = GetComponent<PlayerSwitch>().gameObject;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
