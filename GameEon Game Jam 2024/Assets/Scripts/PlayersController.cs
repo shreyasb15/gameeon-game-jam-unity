@@ -14,6 +14,7 @@ public class PlayerControllerScript : MonoBehaviour
     public Transform groundCheck;
     public float checkRadius;
     public LayerMask whatIsGround;
+    public LayerMask playerLayer;
 
     private int extraJumps;
     public int extraJumpValue;
@@ -27,7 +28,11 @@ public class PlayerControllerScript : MonoBehaviour
 
     private void Update()
     {
-        if(isGrounded == true)
+        // Separate ground check for each player using raycasting
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround) ||
+            Physics2D.Raycast(groundCheck.position, Vector2.down, 0.1f, playerLayer);
+
+        if (isGrounded == true)
         {
             extraJumps = extraJumpValue;
         }
@@ -46,7 +51,7 @@ public class PlayerControllerScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+        // isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
 
         moveInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(speed * moveInput, rb.velocity.y);
