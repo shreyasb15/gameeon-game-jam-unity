@@ -904,7 +904,7 @@ GameObject:
   - component: {fileID: 1040808262}
   - component: {fileID: 1040808264}
   - component: {fileID: 1040808261}
-  - component: {fileID: 1040808263}
+  - component: {fileID: 1040808265}
   m_Layer: 0
   m_Name: Player Switcher
   m_TagString: Untagged
@@ -946,19 +946,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1040808263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1040808260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 290f30d27f388144a89ea654e59de843, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 701835810}
 --- !u!61 &1040808264
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1004,6 +991,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1040808265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040808260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c609ba9df06b4e24e9667b8092f2e7ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnPoint: {fileID: 701835810}
 --- !u!1 &1319562122 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3689813781567740786, guid: 1d86f353ce6396d4ab91877f3e513d64, type: 3}
