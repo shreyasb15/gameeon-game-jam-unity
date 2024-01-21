@@ -9,6 +9,7 @@ public class PlayerSwitch : MonoBehaviour
 {
     public GameObject player1;
     public GameObject player2;
+    public GameObject activePlayer;
 
     public PlayerControllerScript player1Controller;
     public PlayerControllerScript player2Controller;
@@ -43,6 +44,7 @@ public class PlayerSwitch : MonoBehaviour
             player2Controller.enabled = true;
             player2Controller.tag = "ActivePlayer";
 
+            activePlayer = player2;
             player1Active = false;
         }
         else
@@ -57,6 +59,7 @@ public class PlayerSwitch : MonoBehaviour
             player1Controller.enabled = true;
             player1Controller.tag = "ActivePlayer";
 
+            activePlayer = player1;
             player1Active = true;
         }
     }
